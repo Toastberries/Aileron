@@ -17,7 +17,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -96,7 +95,7 @@ public abstract class PlayerEntityMixin implements AileronPlayer {
 		}
 
 		BlockState underBlockState = level.getBlockState(self.blockPosition());
-		if (self.isCrouching() && underBlockState.is(BlockTags.CAMPFIRES) && self.getInventory().getArmor(2).getItem() instanceof ElytraItem) {
+		if (self.isCrouching() && underBlockState.is(BlockTags.CAMPFIRES)) {
 
 			if (level.isClientSide) {
 				SimpleParticleType[] particles = {ParticleTypes.FLAME, ParticleTypes.SMOKE};
